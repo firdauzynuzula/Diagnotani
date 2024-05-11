@@ -19,13 +19,34 @@
                     <h1>Login</h1>
                     <p>Please fill your information below</p>
                 </header>
+
+                <!-- form input -->
                 <form class="form-signin">
-                    <input type="text" placeholder="name" />
-                    <input type="password" placeholder="password" />
+                    <!-- user -->
+                    <div class="input-user">
+                        <img src="assets/person.svg" alt="icon-user" />
+
+                        <input
+                            type="text"
+                            required="tidak boleh kosong"
+                            placeholder="username"
+                        />
+                    </div>
+                    <!-- password -->
+                    <div class="input-password">
+                        <img src="assets/key.svg" alt="icon-password" />
+                        <input
+                            type="password"
+                            required="tidak boleh kosong"
+                            placeholder="password"
+                        />
+                    </div>
                 </form>
                 <!-- button -->
                 <button type="submit" class="button-login">
-                    <span class="button-text">Login</span>
+                    <span class="button-text"
+                        ><a href="#" class="url-login">Login</a></span
+                    >
                     <span class="button-icon">
                         <ion-icon name="chevron-forward-outline"></ion-icon>
                     </span>
