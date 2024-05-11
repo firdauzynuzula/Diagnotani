@@ -45,7 +45,7 @@
     gap: 30px;
 }
 
-.form-signin input {
+.form-signin > input {
     font-size: 20px;
     text-align: start;
     width: 443px;
@@ -56,24 +56,42 @@
     padding-left: 10px;
 }
 
-button {
+/* button style */
+.button-login {
+    display: inline-flex;
     width: 160px;
     height: 70px;
-    background-color: #386641;
+    background-color: #096426;
     font-size: 25px;
     border-radius: 10px;
     margin-top: 40px;
-    color: #fff;
-    text-align: center;
+    padding: 0;
+    outline: none;
     border: none;
+    overflow: hidden;
+    cursor: pointer;
 }
-button a {
+
+.button-login:hover {
+    background: #127d32;
+}
+
+.button-text,
+.button-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
     color: #fff;
-    text-decoration: none;
+    height: 100%;
+}
+
+.button-icon {
+    font-size: 1.5rem;
+    background-color: rgba(6, 92, 39, 0.8);
 }
 
 .border {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(232, 224, 224);
     width: 40%;
     height: 10%;
     position: relative;
