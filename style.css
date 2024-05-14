@@ -51,11 +51,11 @@
     height: 64px;
     border: none;
     border-radius: 8px;
-    background-color: #f5f5f7;
-    padding: 10px 20px;
+    background-color: rgb(245, 245, 247);
     display: flex;
     flex-direction: row;
     outline: none;
+    position: relative;
 }
 
 .input-user > input {
@@ -64,7 +64,8 @@
     outline: none;
     font-size: 22px;
     background-color: transparent;
-    padding: 5px 0;
+    padding: 15px;
+    transition: 0.5s;
 }
 .input-password > input {
     width: 100%;
@@ -72,12 +73,46 @@
     outline: none;
     font-size: 22px;
     background-color: transparent;
-    padding: 5px 0;
+    padding: 15px;
+    transition: 0.5s;
+}
+
+.label-group {
+    position: absolute;
+    left: 60px;
+    padding: 10px;
+    font-size: 20px;
+    color: grey;
+    pointer-events: none;
+    transition: 0.5s;
+    text-transform: lowercase;
+}
+
+input:valid + .label-group,
+input:focus + .label-group {
+    color: #000;
+    transform: translateX(12px) translateY(-9px);
+    font-size: 15px;
+    font-weight: 600;
+    background: rgb(245, 245, 247);
+    background: linear-gradient(
+        0deg,
+        rgba(245, 245, 247, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    padding: 0 5px;
+    letter-spacing: 0.1rem;
+}
+
+input:valid,
+input:focus {
+    border: 2px solid blue;
+    border-radius: 8px;
 }
 
 img {
     width: 30px;
-    margin-right: 15px;
+    margin-left: 15px;
 }
 /* button style */
 .button-login {
