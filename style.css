@@ -93,7 +93,7 @@ input:focus + .label-group {
     color: #1c6fdc;
     transform: translateX(15px) translateY(-10px);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     background: rgb(245, 245, 247);
     background: linear-gradient(
         0deg,
