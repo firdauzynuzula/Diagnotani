@@ -80,19 +80,19 @@
 .label-group {
     position: absolute;
     left: 60px;
-    padding: 10px;
-    font-size: 20px;
+    padding: 18px;
+    font-size: 18px;
     color: grey;
     pointer-events: none;
     transition: 0.5s;
-    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 input:valid + .label-group,
 input:focus + .label-group {
-    color: #000;
-    transform: translateX(12px) translateY(-9px);
-    font-size: 15px;
+    color: #1c6fdc;
+    transform: translateX(15px) translateY(-10px);
+    font-size: 18px;
     font-weight: 600;
     background: rgb(245, 245, 247);
     background: linear-gradient(
@@ -101,18 +101,19 @@ input:focus + .label-group {
         rgba(255, 255, 255, 1) 100%
     );
     padding: 0 5px;
-    letter-spacing: 0.1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 input:valid,
 input:focus {
-    border: 2px solid blue;
+    border: 2px solid #1c6fdc;
     border-radius: 8px;
 }
 
 img {
     width: 30px;
-    margin-left: 15px;
+    margin: 0 12px;
 }
 /* button style */
 .button-login {
