@@ -63,7 +63,8 @@
     border: none;
     outline: none;
     font-size: 22px;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgb(245, 245, 247);
     padding: 15px;
     transition: 0.5s;
 }
@@ -72,7 +73,8 @@
     border: none;
     outline: none;
     font-size: 22px;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgb(245, 245, 247);
     padding: 15px;
     transition: 0.5s;
 }
