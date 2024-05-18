@@ -189,7 +189,7 @@ img {
 .login-right {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/login-page.png");
+    background-image: url("assets/login-page.png");
     background-repeat: no-repeat;
     background-clip: border-box;
     background-position: -10px;
