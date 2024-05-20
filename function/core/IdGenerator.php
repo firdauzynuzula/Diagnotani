@@ -1,5 +1,5 @@
 <?php
-require_once '/database/database.php';
+namespace Core;
 class IDGeneratorAccount
 {
     private $lastID;

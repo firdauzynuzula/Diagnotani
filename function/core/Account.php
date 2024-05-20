@@ -6,7 +6,8 @@
 // require_once(ROOT . '/function/database/database.php');
 // require_once(ROOT . '/function/core/idGenerator.php');
 
-require 'database/database.php';
+namespace Core;
+// require 'database/database.php';
 
 class account
 {
