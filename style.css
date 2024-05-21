@@ -192,5 +192,38 @@ img {
     background-image: url("/assets/login-page.png");
     background-repeat: no-repeat;
     background-clip: border-box;
-    background-position: -10px;
+    background-position: 0 -5rem;
+}
+
+/* styling sign-up page */
+
+.button-signup {
+    display: inline-flex;
+    width: 160px;
+    height: 70px;
+    background-color: #096426;
+    font-size: 22px;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 0;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button-text-signup,
+.button-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 15px;
+    color: #fff;
+    height: 100%;
+    text-transform: capitalize;
+}
+
+.url-signup {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
 }
