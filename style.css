@@ -227,3 +227,12 @@ img {
     color: #fff;
     cursor: pointer;
 }
+
+.login-right-signup {
+    width: 50%;
+    height: 100%;
+    background-image: url("/assets/signup-page.png");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: 0 -5rem;
+}
