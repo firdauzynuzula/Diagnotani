@@ -45,25 +45,55 @@ class Question
 class ShowData
 {
     private $id_gejala_user, $value_gejala_user, $combined_cf;
+    private $db;
 
-    public function __construct($id_gejala_user, $value_gejala_user, $combined_cf = null){
+    public function __construct($id_gejala_user = null, $value_gejala_user = null,  $combined_cf = null){
         $this->id_gejala_user = $id_gejala_user;
         $this->value_gejala_user = $value_gejala_user;  
         $this->combined_cf = $combined_cf;  
+
+        // Inisialisasi database
+        $this->db = new Database();
+
+        // session_start();
+        // // Periksa dan proses data dari sesi
+        // $this->processSessionData();
     }
+
+    // private function processSessionData()
+    // {
+    //     // Dapatkan daftar id_gejala dari sesi
+    //     $id_gejala_penyakit = $_SESSION['id_gejala_penyakit'] ?? [];
+
+    //     // Periksa apakah cf_values ada dalam sesi
+    //     if (!isset($_SESSION['cf_values']) || empty($_SESSION['cf_values'])) {
+    //         echo "Tidak ada data gejala yang diproses.";
+    //         exit;
+    //     }
+
+    //     // Hitung nilai CF akhir
+    //     $final_cf = array_reduce($_SESSION['cf_values'], function ($carry, $item) {
+    //         return $carry + $item * (1 - $carry);
+    //     }, 0);
+
+    //     if (empty($id_gejala_penyakit)) {
+    //         echo "<p>Tidak ada gejala yang diproses.</p>";
+    //         session_destroy();
+    //         exit;
+    //     }
+
+    //     $this->combined_cf = $final_cf;
+    // }
 
     public function question_process()
     {
-        // Connection to the database
-        $db = new Database();
-
         $sql = "SELECT pg.id_penyakit, p.nama_penyakit, pg.id_gejala, g.gejala, g.mb, g.md
                 FROM tb_penyakit_gejala pg
                 JOIN tb_penyakit_jagung p ON pg.id_penyakit = p.id_penyakit
                 JOIN tb_gejala_jagung g ON pg.id_gejala = g.id_gejala
                 WHERE pg.id_gejala = ?";
         
-        $stmt = $db->getconnection()->prepare($sql);
+        $stmt = $this->db->getconnection()->prepare($sql);
         $stmt->bind_param("s", $this->id_gejala_user);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -78,7 +108,7 @@ class ShowData
         }
 
         $cf_values = [];
-        
+
         // Process each item
         foreach ($data as $item) {
             $id_penyakit = $item['id_penyakit'];
@@ -119,16 +149,12 @@ class ShowData
 
     public function getPenyakitByGejala()
     {
-        // Connection to the database
-        $db = new Database();
-
-        // Use prepared statement to avoid SQL injection
         $sql = "SELECT pg.id_penyakit, p.nama_penyakit
                 FROM tb_penyakit_gejala pg
                 JOIN tb_penyakit_jagung p ON pg.id_penyakit = p.id_penyakit
                 WHERE pg.id_gejala = ?";
         
-        $stmt = $db->getconnection()->prepare($sql);
+        $stmt = $this->db->getconnection()->prepare($sql);
         $stmt->bind_param("s", $this->id_gejala_user);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -144,4 +170,30 @@ class ShowData
         
         return $penyakit;
     }
+
+    // public function getPenyakitWithValues()
+    // {
+    //     // Ambil penyakit berdasarkan gejala
+    //     $penyakit = $this->getPenyakitByGejala();
+
+    //     // Periksa apakah cf_values ada dalam sesi
+    //     if (!isset($_SESSION['cf_values']) || empty($_SESSION['cf_values'])) {
+    //         echo "Tidak ada data gejala yang diproses.";
+    //         exit;
+    //     }
+
+    //     // Buat array untuk menggabungkan penyakit dengan nilai CF
+    //     $penyakit_with_values = [];
+
+    //     // Gabungkan penyakit dengan nilai CF
+    //     foreach ($penyakit as $key => $item) {
+    //         $penyakit_with_values[] = [
+    //             'id_penyakit' => $item['id_penyakit'],
+    //             'nama_penyakit' => $item['nama_penyakit'],
+    //             'cf_value' => $_SESSION['cf_values'][$key] ?? 0
+    //         ];
+    //     }
+
+    //     return $penyakit_with_values;
+    // }
 }

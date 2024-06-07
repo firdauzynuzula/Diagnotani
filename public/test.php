@@ -1,5 +1,4 @@
 <?php
-
 namespace Core;
 
 session_start();
@@ -45,7 +44,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['cf_values'] = [];
     }
 
-    if (!isset($_SESSION['id_gejala_penyakit'])) {
+      if (!isset($_SESSION['id_gejala_penyakit'])) {
         $_SESSION['id_gejala_penyakit'] = [];
     }
 
@@ -59,7 +58,7 @@ if (isset($_POST['submit'])) {
     // Gabungkan cf_values yang baru dengan yang ada di sesi
     $_SESSION['cf_values'][] = $combined_cf;
     var_dump($_SESSION['cf_values']);
-
+    
     // Pindah ke pertanyaan berikutnya
     $current_question_index++;
     if ($current_question_index < count($gejala)) {
@@ -81,13 +80,11 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
 </head>
-
 <body>
     <?php if (!empty($gejala)) : ?>
     <?php endif; ?>
@@ -109,5 +106,4 @@ if (isset($_POST['submit'])) {
         <p>Tidak ada data gejala.</p>
     <?php endif; ?>
 </body>
-
 </html>
