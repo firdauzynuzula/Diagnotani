@@ -43,15 +43,6 @@ if (isset($_POST['submit'])) {
     if (!isset($_SESSION['combined_data'])) {
         $_SESSION['combined_data'] = [];
     }
-
-    // // Simpan id_gejala dan nilai_gejala ke dalam array dalam sesi
-    // $_SESSION['combined_data'][] = [
-    //     'id_gejala' => $id_gejala_user,
-    //     'nilai_gejala' => $value_gejala_user,
-    // ];
-
-    // var_dump($_SESSION['combined_data']);
-
     // Instantiate ShowData and process the question
     $sql_data = new ShowData($id_gejala_user, $value_gejala_user);
     $combined_cf = $sql_data->question_process();
@@ -62,16 +53,7 @@ if (isset($_POST['submit'])) {
             'nilai_gejala' => $value_gejala_user,
             'combined_cf' => $combined_cf,
         ];
-    
-        // var_dump($_SESSION['combined_data']);
-    // // Pastikan cf_values disimpan dalam sesi dan adalah array
-    // if (!isset($_SESSION['cf_values'])) {
-    //     $_SESSION['cf_values] = [];
-    // }
 
-    // // Simpan cf_values yang baru ke dalam sesi
-    // $_SESSION['cf_values'][] = $combined_cf;
-    // var_dump($_SESSION['cf_values']);
 
     // Pindah ke pertanyaan berikutnya
     $current_question_index++;
