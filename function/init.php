@@ -2,6 +2,7 @@
 require_once __DIR__ . '/Core/database/Database.php';
 require_once __DIR__ . '/Core/Account.php';
 require_once __DIR__ . '/Core/Question.php';
+require_once __DIR__ . '/Core/ShowData.php';
 require_once __DIR__ . '/Core/DataGejala.php';
 require_once __DIR__ . '/Core/DataPenyakitGejalaJagung.php';
 require_once __DIR__ . '/Core/DataPenyakitJagung.php';

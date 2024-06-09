@@ -15,7 +15,6 @@ $datagejala = new DataGejala();
 
 // Periksa apakah pertanyaan saat ini sudah ada dalam sesi
 if (!isset($_SESSION['current_question'])) {
-    // Jika belum ada, ambil pertanyaan pertama dari objek DataGejala
     $datagejala->dataGejala();
     $gejala = $datagejala->getGejala();
 
@@ -35,30 +34,44 @@ $current_question_index = $_SESSION['current_question_index'] ?? 0;
 $gejala = $_SESSION['gejala'] ?? [];
 $current_question = $gejala[$current_question_index] ?? null;
 
-// Tangani pengiriman jawaban jika formulir disubmit
+// Jika jawaban dikirim oleh user
 if (isset($_POST['submit'])) {
     $id_gejala_user = $_POST['id_gejala'];
     $value_gejala_user = $_POST['nilai_gejala'];
 
-    // Pastikan cf_values disimpan dalam sesi dan adalah array
-    if (!isset($_SESSION['cf_values'])) {
-        $_SESSION['cf_values'] = [];
+    // Pastikan combined_data disimpan dalam sesi dan adalah array
+    if (!isset($_SESSION['combined_data'])) {
+        $_SESSION['combined_data'] = [];
     }
 
-    if (!isset($_SESSION['id_gejala_penyakit'])) {
-        $_SESSION['id_gejala_penyakit'] = [];
-    }
+    // // Simpan id_gejala dan nilai_gejala ke dalam array dalam sesi
+    // $_SESSION['combined_data'][] = [
+    //     'id_gejala' => $id_gejala_user,
+    //     'nilai_gejala' => $value_gejala_user,
+    // ];
 
-    // Simpan id_gejala ke dalam array dalam sesi
-    $_SESSION['id_gejala_penyakit'][] = $id_gejala_user;
+    // var_dump($_SESSION['combined_data']);
 
     // Instantiate ShowData and process the question
     $sql_data = new ShowData($id_gejala_user, $value_gejala_user);
     $combined_cf = $sql_data->question_process();
 
-    // Gabungkan cf_values yang baru dengan yang ada di sesi
-    $_SESSION['cf_values'][] = $combined_cf;
-    var_dump($_SESSION['cf_values']);
+        // Simpan id_gejala dan nilai_gejala ke dalam array dalam sesi bersama combined_cf
+        $_SESSION['combined_data'][] = [
+            'id_gejala' => $id_gejala_user,
+            'nilai_gejala' => $value_gejala_user,
+            'combined_cf' => $combined_cf,
+        ];
+    
+        // var_dump($_SESSION['combined_data']);
+    // // Pastikan cf_values disimpan dalam sesi dan adalah array
+    // if (!isset($_SESSION['cf_values'])) {
+    //     $_SESSION['cf_values] = [];
+    // }
+
+    // // Simpan cf_values yang baru ke dalam sesi
+    // $_SESSION['cf_values'][] = $combined_cf;
+    // var_dump($_SESSION['cf_values']);
 
     // Pindah ke pertanyaan berikutnya
     $current_question_index++;
