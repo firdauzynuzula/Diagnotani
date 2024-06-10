@@ -251,11 +251,12 @@ img {
 
 header {
     display: flex;
-    width: 480px;
-    height: 30px;
+    width: 550px;
+    height: 50px;
     justify-content: space-around;
-    color: rgb(34, 118, 71);
-    font-size: 20px;
+    color: #006250;
+    font-size: 24px;
+    font-weight: bolder;
 }
 
 .opsi {
@@ -279,13 +280,16 @@ header {
     gap: 15px;
 }
 
+span {
+    color: rgba(56, 102, 65, 1);
+}
 .next-button {
     border-radius: 20px;
-    width: 150px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     background-color: #fff;
-    border-color: #127d32;
-    color: #127d32;
+    border-color: #386641;
+    color: #006250;
     cursor: pointer;
 }
 
@@ -301,7 +305,7 @@ header {
     width: 20px;
     height: 20px;
     position: absolute;
-    background-color: #dc450e;
+    background-color: #ff830e;
     border-radius: 50%;
     transform: translateX(-35px) translateY(5px);
     cursor: pointer;
