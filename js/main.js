@@ -11,3 +11,14 @@ console.log("javascript ready...");
 // loginBtn.addEventListener("click", () => {
 //     container.classList.remove("active");
 // });
+
+// testing function openYoutube
+
+const cobaAsync = async () => {
+    alert("kamu telah mengklik aku");
+    await alert("aku tanpamu bagaikan asyncronous tanpa await ");
+};
+
+const cobaBukaYoutube = () => {
+    window.open("");
+};

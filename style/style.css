@@ -236,3 +236,78 @@ img {
     background-clip: border-box;
     background-position: 0 -5rem;
 }
+
+/* styling result page */
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    flex-direction: column;
+    gap: 30px;
+}
+
+header {
+    display: flex;
+    width: 480px;
+    height: 30px;
+    justify-content: space-around;
+    color: rgb(34, 118, 71);
+    font-size: 20px;
+}
+
+.opsi {
+    display: flex;
+    width: 30%;
+    font-size: 20px;
+
+    justify-content: space-around;
+}
+
+.pilihan-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.pilihan-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.next-button {
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+    background-color: #fff;
+    border-color: #127d32;
+    color: #127d32;
+    cursor: pointer;
+}
+
+/* styling option and radio button */
+
+#pilihan {
+    opacity: 0;
+    position: relative;
+}
+
+.checkmark {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #dc450e;
+    border-radius: 50%;
+    transform: translateX(-35px) translateY(5px);
+    cursor: pointer;
+}
+
+/* #pilihan:checked + .checkmark {
+    cursor: pointer;
+    background-color: #dc450e;
+} */
