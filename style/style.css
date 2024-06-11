@@ -300,6 +300,12 @@ span {
     transform: translateX(-320px) translateY(110px);
 }
 
+.next-button:hover {
+    background-color: #127d32;
+    color: #fff;
+    transition: all 5ms ease;
+}
+
 /* styling option and radio button */
 
 #pilihan {
