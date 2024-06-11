@@ -96,12 +96,12 @@ input:focus + .label-group {
     transform: translateX(15px) translateY(-10px);
     font-size: 18px;
     font-weight: 500;
-    background: rgb(245, 245, 247);
     background: linear-gradient(
         0deg,
         rgba(245, 245, 247, 1) 0%,
         rgba(255, 255, 255, 1) 100%
     );
+
     padding: 0 5px;
     letter-spacing: 1px;
     text-transform: capitalize;
@@ -189,7 +189,7 @@ img {
 .login-right {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/login-page.png");
+    background-image: url("../assets/login-page.png");
     background-repeat: no-repeat;
     background-clip: border-box;
     background-position: 0 -5rem;
@@ -231,7 +231,7 @@ img {
 .login-right-signup {
     width: 50%;
     height: 100%;
-    background-image: url("/assets/signup-page.png");
+    background-image: url("..//assets/signup-page.png");
     background-repeat: no-repeat;
     background-clip: border-box;
     background-position: 0 -5rem;
