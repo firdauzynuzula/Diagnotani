@@ -17,6 +17,7 @@
     overflow: hidden;
 }
 
+/* styling login page */
 .login-left {
     display: flex;
     flex-direction: column;
@@ -120,7 +121,7 @@ img {
 /* button style */
 .button-login {
     display: inline-flex;
-    width: 160px;
+    width: 155px;
     height: 70px;
     background-color: #096426;
     font-size: 25px;
@@ -137,19 +138,19 @@ img {
     background: #127d32;
 }
 
-.button-text,
+.url-login,
 .button-icon {
     display: inline-flex;
     align-items: center;
     padding: 0 20px;
     color: #fff;
     height: 100%;
+    cursor: pointer;
 }
 
-.button-text > .url-login {
+.url-login {
     text-decoration: none;
     color: #fff;
-    cursor: pointer;
 }
 
 .button-icon {
@@ -199,33 +200,36 @@ img {
 
 .button-signup {
     display: inline-flex;
-    width: 160px;
-    height: 70px;
+    width: 180px;
+    height: 90px;
     background-color: #096426;
     font-size: 22px;
     border-radius: 10px;
-    margin-top: 40px;
+    margin: 20px 0;
     padding: 0;
     outline: none;
     border: none;
     overflow: hidden;
-    cursor: pointer;
 }
 
-.button-text-signup,
+.url-signup,
 .button-icon {
     display: inline-flex;
     align-items: center;
-    padding: 0 15px;
-    color: #fff;
     height: 100%;
+    color: #fff;
     text-transform: capitalize;
+    cursor: pointer;
+    padding: 0 20px;
+    text-decoration: none;
 }
 
-.url-signup {
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
+.button-signup:hover {
+    background: #127d32;
+}
+.button-icon {
+    font-size: 1.5rem;
+    background-color: rgba(6, 92, 39, 0.8);
 }
 
 .login-right-signup {
@@ -237,7 +241,7 @@ img {
     background-position: 0 -5rem;
 }
 
-/* styling result page */
+/* styling question page */
 
 .main-content {
     display: flex;
@@ -249,7 +253,7 @@ img {
     gap: 30px;
 }
 
-header {
+.header-question-page {
     display: flex;
     width: 550px;
     height: 50px;
